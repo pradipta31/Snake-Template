@@ -26,62 +26,12 @@
         <h1>Snake Game</h1>
         <p>Score :  <span id="score"> </span></p>
         <!-- Step 1. Create Canvas-->
-        <canvas width="400" height="400" id="game" style="background-color: palegreen;"></canvas>
+        <canvas></canvas>
       
     </body>
 
     <script>
-       // Step 2. Acces Canvas & Context
-       var canvas = document.getElementById("game");
-        var ctx = canvas.getContext("2d");
        
-
-        // Step 3. Initialize Variable
-        var score=0;
-        var count=0;
-        var grid=16;
-      
-        
-        // Step 4. Create object
-        var snake = {
-            x: 160,
-            y: 160,
-            dx: grid,
-            dy: 0,
-            cells: [],
-            maxCells: 4
-        };
-        
-        // create object apple
-        var apple = {
-            x: 320,
-            y: 320
-        }
-
-        // step 5. Key Arrow Controller
-            document.addEventListener('keydown', function(e){
-            // left arrow key
-            if(e.which === 37 && snake.dx === 0){
-                snake.dx = -grid;
-                snake.dy = 0;
-            }
-            // up arrow key
-            else if(e.which === 38 && snake.dy === 0){
-                snake.dy = -grid;
-                snake.dx = 0;
-            }
-            // right arrow key
-            else if(e.which === 39 && snake.dx === 0){
-                snake.dx = grid;
-                snake.dy = 0;
-            }
-            // down arrow key
-            else if(e.which === 40 && snake.dy === 0){
-                snake.dy = grid;
-                snake.dx = 0;
-            }
-        });
-             
 
         function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
